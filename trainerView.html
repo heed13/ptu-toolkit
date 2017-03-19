@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PTU Tools</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,900italic,900,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Material Design -->
+    <link href="css/bootstrap-material-design.min.css" rel="stylesheet">
+    <link href="css/ripples.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-danger navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="javascript:void(0)">PTU Pokémon Tools</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- TODO: learn to css -->
+    <br/>
+    <br/>
+    <br/>
+    <!-- end TODO -->
+    
+     <!-- Initial View (Join & Select) -->
+    <div class="container content-init">
+        <div class="well col-sm-12" id="init-connect">
+            <div class="col-sm-6">
+                <img id="trainerImg" src="" style="width:inherit;">
+                <p><b>Name:</b> <span id="trainerName">Trainer Name</span></p>
+                <p><b>Player:</b> <span id="playerName">Player Name</span></p>
+                <p>GM ID</p>
+            </div>
+            <div class="col-sm-6">
+                <span id="statBlock">
+                    <p><b>HP:</b> <span id="statBlock-Hp">9</span></p>
+                    <p><b>Atk:</b> <span id="statBlock-Atk">9</span></p>
+                    <p><b>Def:</b> <span id="statBlock-Def">9</span></p>
+                    <p><b>Sp. Atk:</b> <span id="statBlock-SpAtk">9</span></p>
+                    <p><b>Sp. Def:</b> <span id="statBlock-SpDef">9</span></p>
+                    <p><b>Speed:</b> <span id="statBlock-Speed">9</span></p>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Imports -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <script>
+        //Remove JQuery UI conflicts with Bootstrap
+        $.widget.bridge('uibutton', $.ui.button);
+        $.widget.bridge('uitooltip', $.ui.tooltip);
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="dist/snackbar.min.js"></script>
+    <script src="js/ripples.js"></script>
+    <script src="js/material.js"></script>
+
+    <script src="js/trainer.js"></script>
+</body>
+</html>

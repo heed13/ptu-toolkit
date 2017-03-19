@@ -85,8 +85,19 @@ class PtuAPI extends API
         return $this->getBasicNamedStructure($edgesData);
     }
     
+    /** features
+     * api/v1/features/
+     * api/v1/features/name/
+     * api/v1/features/name/?names=["Trail Blazer","Incandescence"] (uri encoded)
+     */
     public function features() 
     {
+        // TODO: the features might need to be reconsidered or this function needs to be smarter.
+        // The Jsons inconsitent format makes lookups tricky
+        //      a class is 1 level deep 
+        //      class feature is 2 levels deep
+        //      class features for classes that have multiple types (type ace) are 3 levels deep
+        
         // Only handle gets
         if ($this->method != 'GET') {
             return self::NOT_GET_RESPONSE;
@@ -100,9 +111,11 @@ class PtuAPI extends API
             if (!empty($names))  {
                 $returnData = array();
                 foreach ($names as $name) {
-                    $name = ucwords($name);
-                    if (!empty($returnData[$name])) {
-                        $returnData[$name] = $data[$name];
+                    foreach ($featuresData as $featureCategory) {
+                        $name = ucwords($name);
+                        if (!empty($featureCategory[$name])) {
+                            $returnData[$name] = $featureCategory[$name];
+                        }
                     }
                 }
                 return $returnData;
