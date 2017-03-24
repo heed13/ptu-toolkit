@@ -26,7 +26,7 @@ var monOut = {
 monOut["held-item"]=monIn.HeldItem;
 
 //Getting the dex entry:
-var keys = dex.keys();
+var keys = Object.keys(dex);
 var i; for (i=0;i<keys.length;i++){
   if (dex[keys[i]].Species==monIn.species){
     monOut.dex = keys[i];
@@ -41,8 +41,11 @@ if (monIn.type2===""){
   monOut.type = monIn.type1 + " / " + monIn.type2;
 }
 
-
 //Handling things of variable number, like Moves and Abilities
+
+monOut.moves=[];
+monOut.abilities=[];
+
 $.each(monIn, function(key,value){
   //Handling Moves
   if (key.indexOf("Move")!==-1){

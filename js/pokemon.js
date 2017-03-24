@@ -80,6 +80,15 @@ $(function () {
     $(".progress").click(function () {
         window.alert($(this).attr("data-hp"));
     });
+
+    $("input[type='checkbox']").parent().click(function () {
+        if ($(this).find("input").attr("checked") == "checked") {
+            $(this).find("input").removeAttr("checked").val("off").trigger("click").trigger("change");
+        }
+        else {
+            $(this).find("input").attr("checked", "checked").val("on").trigger("click").trigger("change");
+        }
+    });
 });
 
 
@@ -92,7 +101,7 @@ function displayInit() {
     var display = $("#mon1");
 
     $(".content-header").find(".name").html(pokemon_data["name"] + ' <small>Level ' + pokemon_data['level'] + '</small>');
-    $(".pokemon-image").attr("src", "http://www.ptu.panda-games.net/images/pokemon/"+pokemon_data["dex"]+".png");
+    $(".pokemon-image").attr("src", "img/pokemon/"+pokemon_data["dex"]+".gif");
 
     $("#dex-species").html('#' + pokemon_data["dex"] + ' - Species');
 
